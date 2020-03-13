@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Commons.CommonOfBasketApplication\Commons.CommonOfBasketApplication.csproj" />
+    <ProjectReference Include="..\Models.EntitiesOfBasketApplication\Models.EntitiesOfBasketApplication.csproj" />
+    <ProjectReference Include="..\Models.OtherNeccesaryModelsOfBasketApplication\Models.OtherNeccesaryModelsOfBasketApplication.csproj" />
+  </ItemGroup>
+
+</Project>
