@@ -1,11 +1,10 @@
 ﻿#region Added Project References and General Usings
-using System;
-using System.Net;
+using System; 
+using System.Net.Mime;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Managers.ManagerOfBasketApplication.Abstracts;
 using Models.OtherNeccesaryModelsOfBasketApplication.ModelsOfWebAPI.WebAPIModelsOfProductStock;
-using Microsoft.AspNetCore.Http;
-using System.Net.Mime;
 #endregion Added Project References and General Usings
 
 namespace Services.WebAPIOfBasketApplication.Controllers
