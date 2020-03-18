@@ -28,8 +28,7 @@ namespace Services.WebAPIOfBasketApplication.Controllers
 
         #region Public Service Functions
 
-        [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
-        [ProducesResponseType(statusCode: StatusCodes.Status204NoContent)]
+        [ProducesResponseType(statusCode: StatusCodes.Status200OK)] 
         [HttpPost(Name = "{idOfBasketOwnerId:guid}"), Route(template: "buy-products-in-cart-by-basket-owner-id")]
         public IActionResult BuyProductsInCart([FromBody]Guid idOfBasketOwnerId)
         {
