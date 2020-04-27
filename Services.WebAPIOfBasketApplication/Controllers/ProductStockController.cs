@@ -1,5 +1,5 @@
 ﻿#region Added Project References and General Usings
-using System; 
+using System;
 using System.Net.Mime;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -30,35 +30,23 @@ namespace Services.WebAPIOfBasketApplication.Controllers
         #region Public Service Functions
 
         [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
-        [ProducesResponseType(statusCode: StatusCodes.Status204NoContent)]
         [HttpPost("idOfProduct:guid"), Route(template: "fetch-product-stock-information-by-product-id")]
         public IActionResult FetchProductStockInformationByProductId([FromBody]Guid idOfProduct)
         {
             var resultFromFetchProductStockInfoByProductId = this.ManagerOfProductStocks
                                                                  .FetchProductStockInformationByProductId(productId: idOfProduct);
-            if (resultFromFetchProductStockInfoByProductId.InformationOfSuccess.IsResultSuccessful)
-            {
-                return StatusCode(statusCode: StatusCodes.Status200OK,
-                                  value: resultFromFetchProductStockInfoByProductId);
-            }
-            return StatusCode(statusCode: StatusCodes.Status204NoContent,
-                              value: resultFromFetchProductStockInfoByProductId.InformationOfSuccess);
+            return StatusCode(statusCode: StatusCodes.Status200OK,
+                              value: resultFromFetchProductStockInfoByProductId);
         }
 
         [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
-        [ProducesResponseType(statusCode: StatusCodes.Status204NoContent)]
         [HttpPost, Route(template: "insert-or-update-existing-product-stock")]
         public IActionResult InsertOrUpdateExistingProductStock(WebAPIModelOfInsertOrUpdateExistsProductStock newlyProductStockInformation)
         {
             var resultFromInsertOrUpdateExistingProductStock = this.ManagerOfProductStocks
                                                                    .InsertOrUpdateExistingProductStock(insertOrUpdateToProductStock: newlyProductStockInformation);
-            if (resultFromInsertOrUpdateExistingProductStock.IsResultSuccessful)
-            {
-                return StatusCode(statusCode: StatusCodes.Status200OK,
-                                 value: resultFromInsertOrUpdateExistingProductStock);
-            }
-            return StatusCode(statusCode: StatusCodes.Status204NoContent,
-                                 value: resultFromInsertOrUpdateExistingProductStock);
+            return StatusCode(statusCode: StatusCodes.Status200OK,
+                              value: resultFromInsertOrUpdateExistingProductStock);
         }
 
         #endregion Public Service Functions
